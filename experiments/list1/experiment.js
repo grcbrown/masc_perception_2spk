@@ -25,7 +25,34 @@ const irb = {
 timeline.push(irb);
 
 //PRELOAD AUDIO//
-const preload_array = ["audio/246_SN5_high.wav","audio/246_SN20_high.wav","audio/246_SN18_high.wav","audio/246_SN19_high.wav","audio/246_SN15_high.wav","audio/246_SN9_high.wav","audio/246_SN21_mid.wav","audio/246_SN16_mid.wav","audio/246_SN4_mid.wav","audio/246_SN17_mid.wav","audio/246_SN2_mid.wav","audio/246_SN10_mid.wav","audio/246_SN1_low.wav","audio/246_SN8_low.wav","audio/246_SN3_low.wav","audio/246_SN13_low.wav","audio/246_SN7_low.wav","audio/246_SN14_low.wav","audio/340_SN5_high.wav","audio/340_SN20_high.wav","audio/340_SN18_high.wav","audio/340_SN19_high.wav","audio/340_SN15_high.wav","audio/340_SN9_high.wav","audio/340_SN21_mid.wav","audio/340_SN16_mid.wav","audio/340_SN4_mid.wav","audio/340_SN17_mid.wav","audio/340_SN2_mid.wav","audio/340_SN10_mid.wav","audio/340_SN1_low.wav","audio/340_SN8_low.wav","audio/340_SN3_low.wav","audio/340_SN13_low.wav","audio/340_SN7_low.wav","audio/340_SN14_low.wav","audio/723_SN5_high.wav","audio/723_SN20_high.wav","audio/723_SN18_high.wav","audio/723_SN19_high.wav","audio/723_SN15_high.wav","audio/723_SN9_high.wav","audio/723_SN21_mid.wav","audio/723_SN16_mid.wav","audio/723_SN4_mid.wav","audio/723_SN17_mid.wav","audio/723_SN2_mid.wav","audio/723_SN10_mid.wav","audio/723_SN1_low.wav","audio/723_SN8_low.wav","audio/723_SN3_low.wav","audio/723_SN13_low.wav","audio/723_SN7_low.wav","audio/723_SN14_low.wav","audio/246_CN1.wav","audio/246_CN2.wav","audio/246_CN3.wav","audio/246_CN4.wav","audio/246_CN5.wav","audio/246_CN7.wav","audio/246_CN8.wav","audio/246_CN9.wav","audio/246_CN10.wav","audio/246_CN13.wav","audio/246_CN14.wav","audio/246_CN15.wav","audio/246_CN16.wav","audio/246_CN17.wav","audio/246_CN18.wav","audio/246_CN19.wav","audio/246_CN20.wav","audio/246_CN21.wav","audio/340_CN1.wav","audio/340_CN2.wav","audio/340_CN3.wav","audio/340_CN4.wav","audio/340_CN5.wav","audio/340_CN7.wav","audio/340_CN8.wav","audio/340_CN9.wav","audio/340_CN10.wav","audio/340_CN13.wav","audio/340_CN14.wav","audio/340_CN15.wav","audio/340_CN16.wav","audio/340_CN17.wav","audio/340_CN18.wav","audio/340_CN19.wav","audio/340_CN20.wav","audio/340_CN21.wav","audio/723_CN1.wav","audio/723_CN2.wav","audio/723_CN3.wav","audio/723_CN4.wav","audio/723_CN5.wav","audio/723_CN7.wav","audio/723_CN8.wav","audio/723_CN9.wav","audio/723_CN10.wav","audio/723_CN13.wav","audio/723_CN14.wav","audio/723_CN15.wav","audio/723_CN16.wav","audio/723_CN17.wav","audio/723_CN18.wav","audio/723_CN19.wav","audio/723_CN20.wav","audio/723_CN21.wav","audio/gift.wav"];
+const preload_array = [
+    "audio/246_SN5_high.wav", "audio/246_SN20_high.wav", "audio/246_SN18_high.wav",
+    "audio/246_SN19_high.wav", "audio/246_SN15_high.wav", "audio/246_SN9_high.wav",
+    "audio/246_SN21_mid.wav", "audio/246_SN16_mid.wav", "audio/246_SN4_mid.wav",
+    "audio/246_SN17_mid.wav", "audio/246_SN2_mid.wav", "audio/246_SN10_mid.wav",
+    "audio/246_SN1_low.wav", "audio/246_SN8_low.wav", "audio/246_SN3_low.wav",
+    "audio/246_SN13_low.wav", "audio/246_SN7_low.wav", "audio/246_SN14_low.wav",
+    "audio/723_SN5_high.wav", "audio/723_SN20_high.wav", "audio/723_SN18_high.wav",
+    "audio/723_SN19_high.wav", "audio/723_SN15_high.wav", "audio/723_SN9_high.wav",
+    "audio/723_SN21_mid.wav", "audio/723_SN16_mid.wav", "audio/723_SN4_mid.wav",
+    "audio/723_SN17_mid.wav", "audio/723_SN2_mid.wav", "audio/723_SN10_mid.wav",
+    "audio/723_SN1_low.wav", "audio/723_SN8_low.wav", "audio/723_SN3_low.wav",
+    "audio/723_SN13_low.wav", "audio/723_SN7_low.wav", "audio/723_SN14_low.wav",
+    "audio/246_CN1.wav", "audio/246_CN2.wav", "audio/246_CN3.wav",
+    "audio/246_CN4.wav", "audio/246_CN5.wav", "audio/246_CN7.wav",
+    "audio/246_CN8.wav", "audio/246_CN9.wav", "audio/246_CN10.wav",
+    "audio/246_CN13.wav", "audio/246_CN14.wav", "audio/246_CN15.wav",
+    "audio/246_CN16.wav", "audio/246_CN17.wav", "audio/246_CN18.wav",
+    "audio/246_CN19.wav", "audio/246_CN20.wav", "audio/246_CN21.wav",
+    "audio/723_CN1.wav", "audio/723_CN2.wav", "audio/723_CN3.wav",
+    "audio/723_CN4.wav", "audio/723_CN5.wav", "audio/723_CN7.wav",
+    "audio/723_CN8.wav", "audio/723_CN9.wav", "audio/723_CN10.wav",
+    "audio/723_CN13.wav", "audio/723_CN14.wav", "audio/723_CN15.wav",
+    "audio/723_CN16.wav", "audio/723_CN17.wav", "audio/723_CN18.wav",
+    "audio/723_CN19.wav", "audio/723_CN20.wav", "audio/723_CN21.wav",
+    "audio/gift.wav"
+  ];
+  
 const preload_trial = {
     type: jsPsychPreload,
     audio: preload_array
@@ -135,8 +162,27 @@ const audio_trials = {
         type: 'custom',
         fn: function(){
             //define groups
-            var groups = [[0,1,2,3,4,5],[6,7,8,9,10,11],[12,13,14,15,16,17],[18,19,20,21,22,23],[24,25,26,27,28,29],[30,31,32,33,34,35],[36,37,38,39,40,41],[42,43,44,45,46,47],[48,49,50,51,52,53],[54,55,56,57,58,59],[60,61,62,63,64,65],[66,67,68,69,70,71],[72,73,74,75,76,77],[78,79,80,81,82,83],[84,85,86,87,88,89],[90,91,92,93,94,95],[96,97,98,99,100,101],[102,103,104,105,106,107]];
-
+            var groups = [
+                [0, 1, 2, 3],
+                [4, 5, 6, 7],
+                [8, 9, 10, 11],
+                [12, 13, 14, 15],
+                [16, 17, 18, 19],
+                [20, 21, 22, 23],
+                [24, 25, 26, 27],
+                [28, 29, 30, 31],
+                [32, 33, 34, 35],
+                [36, 37, 38, 39],
+                [40, 41, 42, 43],
+                [44, 45, 46, 47],
+                [48, 49, 50, 51],
+                [52, 53, 54, 55],
+                [56, 57, 58, 59],
+                [60, 61, 62, 63],
+                [64, 65, 66, 67],
+                [68, 69, 70, 71]
+            ];
+            
             //create object for each timeline variable specifying group membership and item
             var all_items = [];
             for(var i=0; i<groups.length; i++){
