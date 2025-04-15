@@ -70,6 +70,13 @@ let trial_obj = [
     "lex_code": "neutral"
   },
   {
+    "stimulus": "audio/246_CN3.wav",
+    "speaker": "246",
+    "sib_code": "control",
+    "triplet_id": "3",
+    "lex_code": "neutral"
+  },
+  {
     "stimulus": "audio/723_CN3.wav",
     "speaker": "723",
     "sib_code": "control",
