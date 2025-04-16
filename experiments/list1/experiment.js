@@ -12,7 +12,7 @@ let timeline = []; //Empty timeline to which we will add trials
 
 //PROGRESS BAR SET UP//
 var count = 0; //this will increase at the end of every trial
-var n_trials = 124; // 1 audio check, 108 listening trials, 13 SRQ, 1 survey q (outside survey plugin) + 1 extra for survey
+var n_trials = 88; // 1 audio check, 108 listening trials, 13 SRQ, 1 survey q (outside survey plugin) + 1 extra for survey
 
 //IRB//
 const irb = {
@@ -26,33 +26,30 @@ timeline.push(irb);
 
 //PRELOAD AUDIO//
 const preload_array = [
-    "audio/246_SN5_high.wav", "audio/246_SN20_high.wav", "audio/246_SN18_high.wav",
-    "audio/246_SN19_high.wav", "audio/246_SN15_high.wav", "audio/246_SN9_high.wav",
-    "audio/246_SN21_mid.wav", "audio/246_SN16_mid.wav", "audio/246_SN4_mid.wav",
-    "audio/246_SN17_mid.wav", "audio/246_SN2_mid.wav", "audio/246_SN10_mid.wav",
-    "audio/246_SN1_low.wav", "audio/246_SN8_low.wav", "audio/246_SN3_low.wav",
-    "audio/246_SN13_low.wav", "audio/246_SN7_low.wav", "audio/246_SN14_low.wav",
-    "audio/723_SN5_high.wav", "audio/723_SN20_high.wav", "audio/723_SN18_high.wav",
-    "audio/723_SN19_high.wav", "audio/723_SN15_high.wav", "audio/723_SN9_high.wav",
-    "audio/723_SN21_mid.wav", "audio/723_SN16_mid.wav", "audio/723_SN4_mid.wav",
-    "audio/723_SN17_mid.wav", "audio/723_SN2_mid.wav", "audio/723_SN10_mid.wav",
-    "audio/723_SN1_low.wav", "audio/723_SN8_low.wav", "audio/723_SN3_low.wav",
-    "audio/723_SN13_low.wav", "audio/723_SN7_low.wav", "audio/723_SN14_low.wav",
-    "audio/246_CN1.wav", "audio/246_CN2.wav", "audio/246_CN3.wav",
-    "audio/246_CN4.wav", "audio/246_CN5.wav", "audio/246_CN7.wav",
-    "audio/246_CN8.wav", "audio/246_CN9.wav", "audio/246_CN10.wav",
-    "audio/246_CN13.wav", "audio/246_CN14.wav", "audio/246_CN15.wav",
-    "audio/246_CN16.wav", "audio/246_CN17.wav", "audio/246_CN18.wav",
-    "audio/246_CN19.wav", "audio/246_CN20.wav", "audio/246_CN21.wav",
-    "audio/723_CN1.wav", "audio/723_CN2.wav", "audio/723_CN3.wav",
-    "audio/723_CN4.wav", "audio/723_CN5.wav", "audio/723_CN7.wav",
-    "audio/723_CN8.wav", "audio/723_CN9.wav", "audio/723_CN10.wav",
-    "audio/723_CN13.wav", "audio/723_CN14.wav", "audio/723_CN15.wav",
-    "audio/723_CN16.wav", "audio/723_CN17.wav", "audio/723_CN18.wav",
-    "audio/723_CN19.wav", "audio/723_CN20.wav", "audio/723_CN21.wav",
+    "audio/246_SN5_high.wav","audio/246_SN20_high.wav","audio/246_SN18_high.wav",
+    "audio/246_SN19_high.wav","audio/246_SN15_high.wav","audio/246_SN9_high.wav",
+    "audio/246_SN21_mid.wav","audio/246_SN16_mid.wav","audio/246_SN4_mid.wav",
+    "audio/246_SN17_mid.wav","audio/246_SN2_mid.wav","audio/246_SN10_mid.wav",
+    "audio/246_SN1_low.wav","audio/246_SN8_low.wav","audio/246_SN3_low.wav",
+    "audio/246_SN13_low.wav","audio/246_SN7_low.wav","audio/246_SN14_low.wav",
+    "audio/723_SN5_high.wav","audio/723_SN20_high.wav","audio/723_SN18_high.wav",
+    "audio/723_SN19_high.wav","audio/723_SN15_high.wav","audio/723_SN9_high.wav",
+    "audio/723_SN21_mid.wav","audio/723_SN16_mid.wav","audio/723_SN4_mid.wav",
+    "audio/723_SN17_mid.wav","audio/723_SN2_mid.wav","audio/723_SN10_mid.wav",
+    "audio/723_SN1_low.wav","audio/723_SN8_low.wav","audio/723_SN3_low.wav",
+    "audio/723_SN13_low.wav","audio/723_SN7_low.wav","audio/723_SN14_low.wav",
+    "audio/246_CN1.wav","audio/246_CN2.wav","audio/246_CN3.wav","audio/246_CN4.wav",
+    "audio/246_CN5.wav","audio/246_CN7.wav","audio/246_CN8.wav","audio/246_CN9.wav",
+    "audio/246_CN10.wav","audio/246_CN13.wav","audio/246_CN14.wav","audio/246_CN15.wav",
+    "audio/246_CN16.wav","audio/246_CN17.wav","audio/246_CN18.wav","audio/246_CN19.wav",
+    "audio/246_CN20.wav","audio/246_CN21.wav",
+    "audio/723_CN1.wav","audio/723_CN2.wav","audio/723_CN3.wav","audio/723_CN4.wav",
+    "audio/723_CN5.wav","audio/723_CN7.wav","audio/723_CN8.wav","audio/723_CN9.wav",
+    "audio/723_CN10.wav","audio/723_CN13.wav","audio/723_CN14.wav","audio/723_CN15.wav",
+    "audio/723_CN16.wav","audio/723_CN17.wav","audio/723_CN18.wav","audio/723_CN19.wav",
+    "audio/723_CN20.wav","audio/723_CN21.wav",
     "audio/gift.wav"
-  ];
-  
+  ];  
 const preload_trial = {
     type: jsPsychPreload,
     audio: preload_array
