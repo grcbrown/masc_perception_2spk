@@ -12,7 +12,7 @@ let timeline = []; //Empty timeline to which we will add trials
 
 //PROGRESS BAR SET UP//
 var count = 0; //this will increase at the end of every trial
-var n_trials = 124; // 1 audio check, 108 listening trials, 13 SRQ, 1 survey q (outside survey plugin) + 1 extra for survey
+var n_trials = 88; // 1 audio check, 72 listening trials, 13 SRQ, 1 survey q (outside survey plugin) 
 
 //IRB//
 const irb = {
@@ -293,7 +293,7 @@ const questionnaire = {
             },
             {
                 type: 'text',
-                prompt: 'What is your racial identity?',
+                prompt: 'Racial Identity:',
                 name: 'race', 
                 textbox_columns: 20
             },
