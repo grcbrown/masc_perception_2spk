@@ -250,30 +250,6 @@ const instructions_demo = {
 //push to the timeline
 timeline.push(instructions_demo);
 
-// Questionnaire pt 2
-const questionnaire_2 = {
-    type: jsPsychSurveyLikert,
-    preamble: "Please answer the following question:",
-    questions: [
-      {
-        prompt: "What is your political affiliation?", 
-        labels: [
-          "Very Progressive", 
-          "Somewhat Progressive", 
-          "Moderate", 
-          "Somewhat Conservative", 
-          "Very Conservative"
-        ],
-        on_finish: function(data) {
-            count++;
-            var progress = count/n_trials;
-            jsPsych.setProgressBar((progress));
-        }
-      }
-    ]
-};
-timeline.push(questionnaire_2);
-
 //Survey
 const questionnaire = {
     type: jsPsychSurvey,
@@ -290,10 +266,10 @@ const questionnaire = {
                 options: ['Yes', 'No', 'I was confused']
             },
             {
-                type: 'drop-down',
-                prompt: 'Gender:',
+                type: 'text',
+                prompt: 'Gender Identity:',
                 name: 'gender',
-                options: ['Female', 'Male', 'Non-binary/Non-conforming', 'Other']
+                textbox_columns: 20
             },
             {
                 type: 'text',
@@ -302,10 +278,22 @@ const questionnaire = {
                 textbox_columns: 10
             },
             {
+                type: 'text',
+                prompt: 'Racial Identity:',
+                name: 'race', 
+                textbox_columns: 20
+            },
+            {
                 type: 'drop-down',
                 prompt: 'Level of education:',
                 name: 'education',
-                options: ['Some high school', 'Graduated high school', 'Some college', 'Graduated college', 'Hold a higher degree']
+                options: [
+                    'Some high school', 
+                    'Graduated high school', 
+                    'Some college', 
+                    'Graduated college', 
+                    'Hold a higher degree'
+                ]
             },
             {
                 type: 'text',
@@ -315,21 +303,46 @@ const questionnaire = {
             },
             {
                 type: 'drop-down',
+                prompt: 'What is your political orientation?',
+                name: 'political',
+                options: [
+                    "Very Progressive", 
+                    "Somewhat Progressive", 
+                    "Moderate", 
+                    "Somewhat Conservative", 
+                    "Very Conservative"
+                  ]
+            },
+            {
+                type: 'drop-down',
                 prompt: 'Where in the U.S. do you live?',
                 name: 'region',
-                options: ['Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI', 'Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT', 'Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV', 'Southwest - AZ, NM, OK, TX', 'West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY']
+                options: [
+                    'Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI', 
+                    'Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT', 
+                    'Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV', 
+                    'Southwest - AZ, NM, OK, TX', 
+                    'West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY'
+                ]
             },
             {
                 type: 'drop-down',
                 prompt: 'Do you think the payment was fair?',
                 name: 'payment',
-                options: ['The payment was too low', 'The payment was fair']
+                options: [
+                    'The payment was too low', 
+                    'The payment was fair'
+                ]
             },
             {
                 type: 'drop-down',
                 prompt: 'Did you enjoy the experiment?',
                 name: 'enjoy',
-                options: ['Worse than the average experiment', 'An average experiment', 'Better than the average experiment']
+                options: [
+                    'Worse than the average experiment', 
+                    'An average experiment', 
+                    'Better than the average experiment'
+                ]
             },
             {
                 type: 'text',
