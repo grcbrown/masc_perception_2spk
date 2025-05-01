@@ -1,0 +1,31 @@
+﻿workerid,age,gender,gender_corr,race,race_corr,region,political,edu,lang,lang_corr
+955,25,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Hold a higher degree,English,english
+952,35,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Graduated college,English,english
+943,49,Female,female,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,english
+934,22,male,male,Asian,Asian,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Some college,English,english
+959,26,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,english
+946,58,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Hold a higher degree,English,english
+940,36,MALE,male,WHITE,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Hold a higher degree,ENGLISH,english
+937,38,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,english,english
+963,41,male,male,black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Graduated college,engilish,english
+949,35,female,female,asian,Asian,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Progressive,Graduated college,cantonese,cantonese
+935,69,male,male,whitwe,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated high school,english,english
+956,37,nonbinary,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,english,english
+938,41,MALE,male,WHITE,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",,Hold a higher degree,ENGLISH,english
+950,46,Male,male,Hispanic,Hispanic,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Hold a higher degree,English,english
+944,24,Female,female,Hispanic,Hispanic,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Graduated college,English,english
+960,43,Male,male,Black or African American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,English,english
+941,35,female,female,asian,Asian,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Some college,english,english
+953,39,Male,male,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,english
+947,33,gender fluid,nc,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,english
+964,38,nonbinary,nc,mixed,Mixed,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,english,english
+951,42,female,female,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,english,english
+965,41,nonbinary,nc,mixed,Mixed,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,english,english
+961,20,Nonbinary,nc,Asian,Asian,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,English,english
+962,38,Non-binary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,English,english
+945,46,trans,nc,Italian,Italian,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,english
+936,21,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Graduated high school,English,english
+957,35,female,female,African American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,english
+942,29,Man,male,Black,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,english
+939,52,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Hold a higher degree,English,english
+954,30,non-binary,nc,Asian,Asian,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,english
