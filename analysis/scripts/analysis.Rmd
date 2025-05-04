@@ -28,9 +28,9 @@ theme_set(theme_bw())
 ```{r load}
 ### DATA WRANGLING
 ## read messy dataset
-df.sibilant <- read_csv("~/masc_perception_2spk/data/masc_2pk_pilot-merged.csv")
-#df.survey <- read_csv("~/final-project-grace-brown/data/survey_post.csv")
-#df.sibilant <- left_join(x=df.sibilant,y=df.survey,by="workerid")
+df.sibilant <- read_csv("~/masc_perception_2spk/data/masc_2pk_pilot_v2-merged.csv")
+df.survey <- read_csv("~/masc_perception_2spk/data/survey_pilot_v2.csv")
+df.sibilant <- left_join(x=df.sibilant,y=df.survey,by="workerid")
 
 # workerid EXCLUSION BY PRE-REGISTERED CRITERIA
 ## (1) audio attention check 
@@ -42,7 +42,7 @@ df.sibilant <- df.sibilant %>%
   anti_join(df.exclude_audio, by = "workerid")
 
 ## (2) - responded to less than 85% of trials 
-trial_num <- 72 # 108 total trials (36 sib + 36 control)
+trial_num <- 72 # 72 total trials (36 sib + 36 control)
 df.exclude_trialnum <- df.sibilant %>% 
   filter(!is.na(rt), trial_type == "audio-slider-response") %>% 
   count(workerid) %>% 
@@ -87,49 +87,56 @@ df.sibilant$spk <- recode(df.sibilant$spk,
                        `246` = "A", 
                        `723` = "B") %>%
   as.factor() # set to factor
+
+### relabel sib conditions
+df.sibilant$sib_code[df.sibilant$sib_code == "low"] = "backed"
+df.sibilant$sib_code[df.sibilant$sib_code == "high"] = "fronted"
 ```
 
 ## Basic Summaries
-### SKIPPED Demographic Data
+### Demographic Data
 ```{r summaries}
-gender_summary <- data %>% select(workerid,gender) %>% group_by(gender) %>% reframe("count" = n_distinct(workerid))
-print(gender_summary)
+# Gender Summary
+df.sibilant %>% 
+  select(workerid,gender_corr) %>% 
+  group_by(gender_corr) %>% 
+  reframe("count" = n_distinct(workerid))
 
-age_summary <- data %>% filter(!is.na(age)==T) %>% summarize("min_age" = min(age), "mean_age" = mean(age), "max_age" = max(age), "sd_age" = sd(age))
-print(age_summary)
+# Age Summary
+df.sibilant %>% 
+  filter(!is.na(age)==T) %>% 
+  summarize("min_age" = min(age), 
+            "mean_age" = mean(age), 
+            "max_age" = max(age), 
+            "sd_age" = sd(age))
 
-region_summary <- data %>% select(workerid,region) %>% group_by(region) %>% reframe("count" = n_distinct(workerid))
-print(region_summary)
+# Racial Summary (flor flavor, not part of planned analysis)
+df.sibilant %>% 
+  select(workerid,race_corr) %>% 
+  group_by(race_corr) %>% 
+  reframe("count" = n_distinct(workerid))
 
-edu_summary <- data %>% select(workerid,education) %>% group_by(education) %>% reframe("count" = n_distinct(workerid))
-print(edu_summary)
+# Region Summary (for flavor, not part of planned analysis)
+df.sibilant %>% 
+  select(workerid,region) %>% 
+  group_by(region) %>% 
+  reframe("count" = n_distinct(workerid))
 
-political <- data %>% filter(trial_type == "survey-likert") %>% reframe("workerid" = workerid, "political" = response)
-political$political <- str_replace(political$political, "\\{'Q0': ", "")
-political$political <- str_replace(political$political, "\\}", "")
-political$political <- political$political %>% na_if("''")
-data <- left_join(x=data,y=political,by="workerid")
+# Education Summary (for flavor, not part of planned analysis)
+df.sibilant %>% 
+  select(workerid,edu) %>% 
+  group_by(edu) %>% 
+  reframe("count" = n_distinct(workerid))
 
-pol_summary <- political %>% select(workerid,political) %>% group_by(political) %>% reframe("count" = n_distinct(workerid))
-print(pol_summary)
+# Political Summary (for flavor, not part of planned analysis) 
+df.sibilant %>% 
+  select(workerid,political) %>% 
+  group_by(political) %>% 
+  reframe("count" = n_distinct(workerid))
 ```
 
 
-## SKIPPED Relable Speakers
-
-```{r speakers}
-## relable spk
-data$spk[data$spk == 246] = "A"
-data$spk[data$spk == 723] = "C"
-data$spk[data$spk == 340] = "B"
-
-### relabel sib conditions
-data$sib_code[data$sib_code == "low"] = "backed"
-data$sib_code[data$sib_code == "high"] = "fronted"
-```
-
-
-## Numeric Data
+### Numeric Data
 
 ```{r summarize data}
 ### summarize numeric data 
@@ -141,10 +148,10 @@ df.numeric <- df.sibilant %>%
 
 df.numeric$sib_code <- factor(df.numeric$sib_code, 
                               levels = c("control", 
-                                         "low", 
+                                         "backed", 
                                          "mid", 
-                                         "high"))
-df.numeric$response <- as.double(df.numeric$response)
+                                         "fronted"))
+df.numeric$response <- as.double(df.numeric$response)/100
 
 # SKIP ADD LOBANOV NORMALIZED PITCH MEASUREMENTS TO DATASET
 exp_data <- exp_data %>% 
@@ -166,20 +173,27 @@ df.numeric %>% group_by(workerid) %>% summarize("min" = min(response), "mean" = 
 df.numeric %>% group_by(workerid, spk) %>% summarize("min" = min(response), "mean" = mean(response), "max" = max(response))
 ```
 
-### By Speaker (Ratings)
+#### By Speaker (Ratings)
 ```{r by_spk}
 #### by spk
-exp_sub_1 <- subset(exp_data, select = -c(trial_index,workerid)) 
-exp_summary_1 <- summarize(exp_sub_1, "mean"=mean(response_numeric/100), "var" = var(response_numeric/100), "sd" = sd(response_numeric/100))
-print(exp_summary_1)
+df.numeric %>% 
+  subset(select = -c(trial_index,
+                     workerid)) %>%
+  summarize("mean"=mean(response), 
+            "var" = var(response), 
+            "sd" = sd(response))
 ```
 
-### By Speaker + Sib (Ratings)
+#### By Speaker + Sib (Ratings)
 ```{r by_spk_sib}
 #### by spk + sib 
-exp_sub_2 <- subset(exp_data, select = -c(trial_index,triplet_id)) %>% group_by(sib_code, spk)
-exp_summary_2 <- summarize(exp_sub_2, "mean"=mean(response_numeric/100), "var" = var(response_numeric/100), "sd" = sd(response_numeric/100))
-print(exp_summary_2)
+df.numeric %>% 
+  subset(select = -c(trial_index,
+                     workerid)) %>%
+  group_by(sib_code, spk) %>%
+  summarize("mean"=mean(response), 
+            "var" = var(response), 
+            "sd" = sd(response))
 ```
 
 ### Phonetics by Speaker
@@ -202,13 +216,13 @@ print(phon_spk)
 #ACROSS SPEAKERS
 ggplot(data = df.numeric,
        mapping = aes(x = sib_code,
-                     y = response/100)) + 
+                     y = response)) + 
   stat_summary(fun = "mean",
                geom = "bar",
                fill = "lightblue") + 
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
-  scale_x_discrete(limits = c("control", "low", "mid", "high")) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
 
@@ -217,14 +231,30 @@ ggplot(data = df.numeric,
 #BY SPEAKERS
 ggplot(data = df.numeric,
        mapping = aes(x = sib_code,
-                     y = response/100)) + 
+                     y = response)) + 
   stat_summary(fun = "mean",
                geom = "bar",
                fill = "lightblue") + 
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
   facet_grid(~spk) +
-  scale_x_discrete(limits = c("control", "low", "mid", "high")) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
+  labs(x = "/s/ Condition",
+       y = "Masculinity Rating")
+
+ggplot(data = df.numeric,
+       mapping = aes(x = sib_code,
+                     y = response,
+                     group = spk)) + 
+  geom_point(alpha = 0.25,
+             position = position_jitter(width = 0.1, height = 0)) + 
+  stat_summary(fun.data = "mean_cl_boot",
+               shape = 21,
+               size = 0.5,
+               color = "black",
+               fill = "lightblue") + 
+  facet_grid(~spk) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
 
@@ -232,42 +262,80 @@ ggplot(data = df.numeric,
 #BY SPEAKERS & ITEM (IN PARTS)
 df.numeric %>% filter(triplet_id < 8) %>%
 ggplot(mapping = aes(x = sib_code,
-                     y = response/100)) + 
+                     y = response)) + 
   stat_summary(fun = "mean",
                geom = "bar",
                fill = "lightblue") + 
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
   facet_grid(triplet_id~spk) +
-  scale_x_discrete(limits = c("control", "low", "mid", "high")) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
 
 df.numeric %>% filter(triplet_id > 7 & triplet_id < 16) %>%
   ggplot(mapping = aes(x = sib_code,
-                     y = response/100)) + 
+                     y = response)) + 
   stat_summary(fun = "mean",
                geom = "bar",
                fill = "lightblue") + 
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
   facet_grid(triplet_id~spk) +
-  scale_x_discrete(limits = c("control", "low", "mid", "high")) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
 
 df.numeric %>% filter(triplet_id > 15) %>%
   ggplot(mapping = aes(x = sib_code,
-                     y = response/100)) + 
+                     y = response)) + 
   stat_summary(fun = "mean",
                geom = "bar",
                fill = "lightblue") + 
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
   facet_grid(triplet_id~spk) +
-  scale_x_discrete(limits = c("control", "low", "mid", "high")) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
+```
+#### By Listener Gender
+```{r}
+ggplot(data = df.numeric,
+       mapping = aes(x = sib_code,
+                     y = response)) + 
+  stat_summary(fun = "mean",
+               geom = "bar",
+               fill = "lightblue") + 
+  stat_summary(fun.data = "mean_cl_boot",
+               geom = "linerange") +
+  facet_grid(gender_corr~spk) +
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
+  labs(x = "/s/ Condition",
+       y = "Masculinity Rating")
+```
+
+```{r}
+# Linear mixed effects model with random by-participant and by-item intercepts 
+fit.lmer <- lmer(response ~ sib_code * spk + 
+                   (1 | workerid) + 
+                   (1 | triplet_id), 
+                 data = df.numeric)
+
+# Check distributions of residuals 
+df.numeric %>% 
+  ungroup() %>% 
+  mutate(predicted = predict(fit.lmer, 
+                             newdata = df.numeric, 
+                             type = "response", 
+                             re.form = NA),
+         residuals = residuals(fit.lmer)) %>%
+  ggplot(mapping = aes(x = predicted, 
+                       y = residuals)) +
+  geom_point(alpha = 0.05) +
+  geom_smooth(method = "loess", 
+              color = "red") +
+  labs(title = "Residuals vs. fitted values of linear mixed effects model") 
 ```
 
 
