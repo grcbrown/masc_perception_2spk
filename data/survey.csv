@@ -1,0 +1,301 @@
+﻿workerid,age,gender_raw,gender_corr,race_raw,race_corr,region,political,edu,lang_raw,lang_raw 2
+1095,44,Male,male,Caucasian,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Some college,English,English
+1080,34,Male,male,Black,Black,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Hold a higher degree,English,English
+1006,41,female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Hold a higher degree,English,English
+1146,54,Female,female,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,English,English
+1056,67,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated college,English,English
+1068,62,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Some college,english,English
+1065,25,male,male,Black,Black,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Graduated college,English,English
+1261,23,Non-binary,nc,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated high school,English,English
+1165,32,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Graduated high school,English,English
+1255,22,Nonbinary,nc,Asian/White,Mixed,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Some college,English,English
+1131,32,Male,male,African American,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,English
+1143,39,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Hold a higher degree,English,English
+1029,42,female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Hold a higher degree,,No_Resp
+1155,31,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Hold a higher degree,English,English
+1161,29,female,female,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,english,English
+1230,29,Nonbinary,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+985,25,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Some college,english,English
+1027,53,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Some college,English,English
+1192,47,Dual Gender,nc,Caucasian,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some college,English,English
+1014,37,Male,male,African American,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated high school,English,English
+1226,32,Nonbinary,nc,White,White,"Southwest - AZ, NM, OK, TX",Very Progressive,Graduated high school,English,English
+1149,68,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Hold a higher degree,English,English
+1179,27,nonbinary,nc,white,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Some college,english,English
+1249,26,Nonbinary,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+973,38,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,English,English
+1198,20,Non Binary,nc,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated high school,English,English
+1062,46,Female,female,,No_Resp,,,,,No_Resp
+1220,33,agender,nc,,No_Resp,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated college,english,English
+1186,21,Nonbinary,nc,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,English,English
+1214,63,Nonbinary,nc,White,White,"Southwest - AZ, NM, OK, TX",Very Progressive,Hold a higher degree,English,English
+1098,34,Male,male,Hispanic,Latinx,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated high school,English,English
+1274,23,nonbinary,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",,Graduated college,english,English
+970,45,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Some college,english,English
+1233,29,Queer,nc,Mexican,Latinx,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,English,English
+1044,23,female,female,Black american,Black,"Southwest - AZ, NM, OK, TX",Very Conservative,Graduated college,English,English
+1119,31,female,female,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Graduated college,english,English
+1211,35,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Graduated college,English,English
+1104,45,FEMALE,female,WHITE,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Some college,ENGLISH,English
+1217,23,Male,male,Hispanic,Latinx,"Southwest - AZ, NM, OK, TX",Moderate,Graduated high school,English,English
+1128,41,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated high school,English,English
+988,,Male,male,,No_Resp,,,,,No_Resp
+994,28,male,male,african american,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Graduated college,English,English
+982,34,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,English,English
+1003,47,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,english,English
+1023,39,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,English
+1074,51,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,english,English
+1195,40,nonbinary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+1158,63,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Hold a higher degree,English,English
+1020,54,Male,male,Caucasian,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Some college,English,English
+1089,46,man,male,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,english,English
+979,27,Female,female,Asian,Asian,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Hold a higher degree,English,English
+1180,27,Non-Binary,nc,Asian,Asian,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1175,23,Non-binary,nc,Black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1281,25,Female,female,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1204,37,NonBinary,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1271,37,Non binary,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated high school,English,English
+1071,78,Male,male,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1223,28,nonbinary transmasculine,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,English,English
+1083,63,woman,female,white,White,"Southwest - AZ, NM, OK, TX",Very Progressive,Some college,English,English
+1077,55,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated high school,English,English
+1134,25,male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Hold a higher degree,English,English
+1032,42,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",,Hold a higher degree,english,English
+1012,22,Woman,female,Hispanic/Latina,Latinx,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+1258,34,non binary,nc,white,White,"Southwest - AZ, NM, OK, TX",Moderate,Some college,English,English
+1101,28,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Hold a higher degree,English,English
+1122,25,female,female,black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1116,48,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Hold a higher degree,english,English
+1041,27,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,English,English
+1189,35,nonbinary trans,nc,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,english,English
+976,52,male,male,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Graduated college,English,English
+1252,34,Non-binary,nc,Mixed,Mixed,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,English,English
+1277,27,Nonbinary,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated high school,English,English
+1208,33,reluctant woman,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some college,english,English
+1053,44,Female,female,,No_Resp,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",,Hold a higher degree,,No_Resp
+1246,30,Non-binary,nc,Prefer not to respond,No_Resp,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Some college,American English,English
+1009,62,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some college,English,English
+1035,67,male,male,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Graduated college,,No_Resp
+1181,31,Agender,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated high school,English,English
+1137,35,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,english,English
+1110,41,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Hold a higher degree,English,English
+1265,30,non binary,nc,caucasian,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,english,English
+1140,55,Female,female,Black,Black,"Southwest - AZ, NM, OK, TX",Moderate,Graduated college,English,English
+1113,31,Cis female,female,non-hispanic white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some college,English,English
+1050,20,M,male,Hispanic,Latinx,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Some college,English,English
+1107,57,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Graduated college,english,English
+1236,41,Non-Binary,nc,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated high school,english,English
+1059,38,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,English,English
+1205,26,non-binary,nc,black,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated high school,English,English
+1000,20,male,male,white,White,"Southwest - AZ, NM, OK, TX",Moderate,Some high school,english,English
+1171,36,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+991,70,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Some college,English,English
+1017,33,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,english,English
+1152,34,male,male,Black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Graduated college,English,English
+1268,51,Non Binary,nc,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,English,English
+1239,24,nonbinary,nc,Black,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+1086,53,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Some college,english,English
+1125,36,female,female,black American,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Graduated college,English,English
+1047,24,Male,male,Black/African American,Black,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Hold a higher degree,English,English
+1038,56,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated high school,English,English
+1242,32,Non-binary,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1245,56,non-binary,nc,biracial,Mixed,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,English,English
+1147,25,Male,male,Asian,Asian,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated college,English,English
+977,59,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,english,English
+1126,32,male,male,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Graduated college,english,English
+1033,38,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,english,English
+1099,25,female,female,white,White,,Somewhat Conservative,Hold a higher degree,,No_Resp
+1200,42,Nonbinary,nc,Mixed,Mixed,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+1001,75,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Hold a higher degree,english,English
+983,37,FEMALE,female,BLACK,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,ENGLISH,English
+1069,46,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,english,English
+1156,34,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated college,English,English
+1132,53,male,male,caucasian,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Some college,English,English
+1248,41,nonbinary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,english,English
+1060,32,male,male,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Hold a higher degree,english,English
+1173,68,femal,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Hold a higher degree,English,English
+1042,70,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,English,English
+1120,28,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated college,English,English
+1063,75,male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+1129,24,Female,female,Black African American,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Graduated college,English,English
+1267,24,agender,nc,black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,english,English
+1188,27,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some college,English,English
+1203,30,Non-binary,nc,Black Hispanic,Mixed,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,English,English
+1021,52,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,english,English
+1229,40,non-binary,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Hold a higher degree,English,English
+1219,32,nb,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Graduated college,eng,English
+971,58,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",,Hold a higher degree,English,English
+1015,51,female,female,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,English,English
+1270,46,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,English
+1264,49,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated high school,English,English
+1169,41,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Hold a higher degree,English,English
+986,61,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,english,English
+1093,61,female,female,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Graduated college,English,English
+1090,25,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+998,36,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Hold a higher degree,English,English
+1105,53,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,english,English
+1102,53,Male,male,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Hold a higher degree,English,English
+1162,49,male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Hold a higher degree,english,English
+1057,48,male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Hold a higher degree,english,English
+1030,44,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Graduated college,English,English
+992,57,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Some college,English,English
+1039,31,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+1260,30,Non-Binary/Genderqueer,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,English,English
+1048,31,male,male,White,White,"Southwest - AZ, NM, OK, TX",Very Progressive,Graduated college,English,English
+1238,63,non binary,nc,hispanic,Latinx,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated college,english,English
+1051,28,Male,male,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Hold a higher degree,English,English
+1182,31,agender,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1153,29,Male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated high school,english,English
+1159,59,Male,male,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Hold a higher degree,English,English
+1007,29,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,English,English
+995,53,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1241,33,nonbinary,nc,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1197,61,nonbinary,nc,Sephardic Jew,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Some college,English,English
+1194,35,Non-binary,nc,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated high school,English,English
+1166,29,Nonbinary,nc,White Hispanic,Latinx,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Graduated college,English,English
+989,41,Woman,female,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+974,28,female,female,prefer not to say,No_Resp,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,English
+1210,28,Non-binary,nc,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Hold a higher degree,english,English
+1010,32,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Graduated college,English,English
+1025,24,Male,male,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+1170,69,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Hold a higher degree,English,English
+1257,28,Agender,nc,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some high school,English,English
+1254,32,Nonbinary,nc,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated high school,English,English
+1191,50,non-binary,nc,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+1207,32,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Very Progressive,Some college,English,English
+1054,18,Male,male,Black American,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1075,34,female,female,black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,ENGLISH,English
+1010,33,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Hold a higher degree,English,English
+1123,66,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Some college,english,English
+1072,27,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated college,English,English
+1141,46,male,male,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,english,English
+1150,66,male,male,white non hispanic,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated high school,english,English
+1078,51,Female,female,Hispanic,Latinx,"Southwest - AZ, NM, OK, TX",Very Conservative,Hold a higher degree,English,English
+1024,43,Man,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,English
+1084,43,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+1279,33,Nonbinary,nc,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,English,English
+1117,25,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1138,51,male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated college,English,English
+968,30,Female,female,Black,Black,"Southwest - AZ, NM, OK, TX",Very Progressive,Graduated college,English,English
+1108,57,female,female,Human mixed race,Mixed,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated college,English,English
+1087,30,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,English
+1096,51,woman,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Some college,english,English
+1228,29,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+1111,51,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Graduated college,english,English
+1045,56,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,English
+1273,36,agender,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,English,English
+1036,46,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Hold a higher degree,English,English
+1216,40,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+1135,33,Male,male,White/Caucasian,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Some college,English,English
+1177,50,non-binary,nc,black and white,Mixed,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated college,English,English
+1276,29,Nonbinary,nc,White/European American,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Hold a higher degree,English,English
+1213,31,nonbinary,nc,celtic,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+1114,23,Male,male,,No_Resp,"Southwest - AZ, NM, OK, TX",Moderate,Hold a higher degree,English,English
+1232,29,nonbinary,nc,Asian,Asian,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated high school,English,English
+1066,26,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Graduated college,English,English
+1004,21,Female,female,North African,North African,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated college,English,English
+1251,23,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,english,English
+1081,47,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated college,English,English
+1225,47,nonbinary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1018,41,Male,male,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1235,31,male,male,asian,Asian,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Some high school,english,English
+1174,45,Female,female,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Conservative,Hold a higher degree,English,English
+1097,26,Female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,English
+1013,40,Female,female,Black African American,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Hold a higher degree,English,English
+1055,36,male,male,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,English
+1064,65,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,English,English
+1022,40,Female,female,African American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,English,English
+1160,71,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Graduated college,English,English
+1043,32,female,female,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,English
+1139,46,Male,male,Black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1016,26,female,female,black american,Black,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Graduated high school,english,English
+1212,34,non-binary,nc,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+1215,30,Non-binary,nc,White/Hispanic,Latinx,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1091,32,non-binary,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+1037,27,Female,female,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+1026,34,MALE,male,WHITE,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Hold a higher degree,ENGLISH,English
+1193,29,male,male,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1136,41,Man,male,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Hold a higher degree,English,English
+1275,72,female,female,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Some college,english,English
+1237,56,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,english,English
+1031,51,Man,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated high school,enlish,English
+1272,21,Non-Binary,nc,Hispanic,Latinx,"Southwest - AZ, NM, OK, TX",Very Progressive,Some college,Spanish,Spanish
+993,33,female,female,female,No_Resp,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Conservative,Graduated college,english,English
+1106,29,Male,male,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1163,25,Male,male,Black,Black,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Graduated college,English,English
+1049,59,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,english,English
+1243,21,Nonbinary,nc,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated high school,English,English
+1259,25,nonbinary,nc,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated high school,english,English
+1103,53,female,female,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Progressive,Graduated college,English,English
+1109,49,Male,male,Black American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+1151,24,Male,male,Panamanian,Latinx,"Southwest - AZ, NM, OK, TX",Very Conservative,Some college,English,English
+1005,21,Female,female,Black,Black,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated college,English,English
+1073,42,female,female,Caucasian,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated high school,English,English
+969,25,female,female,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,english,English
+1040,36,Female,female,African American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,English,English
+1187,52,nonbinary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+1227,67,Non-Binary,nc,white,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Graduated college,English,English
+1112,35,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated college,English,English
+1206,21,Nonbianry,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+984,40,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,,English,English
+1199,53,nonbinary,nc,"white, nh",White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,english,English
+1183,81,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,English,English
+1142,23,male,male,African American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,English,English
+1269,30,Female,female,Black/African-American,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,English
+1148,27,Male,male,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1046,33,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Some high school,English,English
+999,21,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Hold a higher degree,English,English
+1154,53,male,male,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Some college,english,English
+1209,34,female,female,native,Native,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated college,english,English
+1002,21,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Hold a higher degree,English,English
+1058,41,Male,male,Hispanic,Latinx,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Hold a higher degree,English,English
+1262,26,Two Spirit,nc,"Black, Native American",Mixed,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Graduated college,English,English
+987,70,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Some college,English,English
+1224,28,Agender,nc,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+1172,58,Woman,female,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Conservative,Hold a higher degree,English,English
+1121,31,female,female,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Hold a higher degree,English,English
+1118,25,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated college,English,English
+1218,34,non-binary,nc,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,Some college,English,English
+1250,38,non-binary,nc,Latinx,Latinx,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Some college,English,English
+1157,23,Man,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,English
+1280,39,Woman,female,Multiracial,Mixed,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Somewhat Progressive,Graduated college,English,English
+972,41,female,female,white,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Graduated college,english,English
+1082,56,female,female,white,White,,Moderate,Some college,english,English
+1234,34,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated college,English,English
+1253,22,nonbinary,nc,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Progressive,,english,English
+1028,22,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,,No_Resp
+1011,44,female,female,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Graduated college,English,English
+1127,62,female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Progressive,Graduated high school,English,English
+1202,27,Nonbinary,nc,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Graduated college,English,English
+1070,26,Female,female,Black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1130,25,Male,male,Asian and White,Mixed,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Moderate,Graduated high school,english,English
+1167,58,Female,female,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Hold a higher degree,English,English
+981,26,Male,male,Caucasian,White,"Southwest - AZ, NM, OK, TX",Somewhat Conservative,Hold a higher degree,English,English
+1088,32,female,female,caucasian,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Somewhat Progressive,Graduated high school,English,English
+975,63,FEMALE,female,WHITE,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Some college,ENGLISH,English
+1052,56,male,male,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated college,English,English
+1079,64,female,female,White European,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated college,English,English
+1221,42,Man,male,White,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Moderate,Graduated college,English,English
+1085,37,agender AMAB,nc,Vietmense American,Asian,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Hold a higher degree,English,English
+1164,30,Female,female,White,White,"Southwest - AZ, NM, OK, TX",Very Conservative,Hold a higher degree,English,English
+1019,30,Female,female,Puerto rican,Latinx,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1266,64,nonbinary,nc,white,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Progressive,Graduated college,English,English
+1076,22,Male,male,White,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Hold a higher degree,English,English
+1190,33,Male,male,Caucasian,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Hold a higher degree,English,English
+1008,33,Male,male,Caucasian,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Somewhat Conservative,Graduated high school,English,English
+1240,24,Nonbinary,nc,Caucasian,White,"Southwest - AZ, NM, OK, TX",Somewhat Progressive,Graduated college,English,English
+1196,39,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Moderate,Graduated high school,English,English
+978,35,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Progressive,Graduated college,English,English
+990,58,Male,male,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Graduated college,English,English
+1145,47,Male,male,White,White,"Midwest - IA, IL, IN, KS, MI, MN, MO, ND, NE, OH, SD, WI",Very Conservative,Graduated high school,English,English
+1247,37,non-binary,nc,Latino,Latinx,"Southwest - AZ, NM, OK, TX",Very Progressive,Graduated college,English,English
+996,54,Female,female,White,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Very Conservative,Hold a higher degree,English,English
+1124,27,male,male,black,Black,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Graduated college,English,English
+1256,36,Female,female,White,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,English,English
+1115,49,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Hold a higher degree,English,English
+1178,41,Nonbinary,nc,white,White,"West - AK, CA, CO, HI, ID, MT, NV, OR, UT, WA, WY",Very Progressive,Some college,English,English
+1231,23,genderfluid,nc,white/black,Mixed,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Progressive,Some college,english,English
+1061,48,male,male,white,White,"Northeast - CT, DC, DE, MA, MD, ME, NH, NJ, NY, PA, RI, VT",Moderate,Graduated high school,english,English
+1100,,Male,male,,No_Resp,,,,,No_Resp
+1094,49,male,male,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Very Conservative,Graduated high school,english,English
+1133,24,Female,female,white,White,"Southeast - AL, AR, FL, GA, KY, LA, MS, NC, SC, TN, VA, WV",Somewhat Conservative,Some college,English,English
