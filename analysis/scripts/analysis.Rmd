@@ -137,7 +137,8 @@ df.numeric <- df.numeric %>%
          norm_mean_f0 = (pitAve_semi - mean(pitAve_semi))/sd(pitAve_semi),
          norm_SD_f0 = (pitSD_semi - mean(pitSD_semi))/sd(pitSD_semi),
          norm_max_f0 = (pitMax_semi - mean(pitMax_semi))/sd(pitMax_semi),
-         norm_min_f0 = (pitMin_semi - mean(pitMin_semi))/sd(pitMin_semi))
+         norm_min_f0 = (pitMin_semi - mean(pitMin_semi))/sd(pitMin_semi)) %>%
+  ungroup()
 
 # create centered variables for statistical analysis
 df.numeric <- df.numeric %>% 
@@ -170,13 +171,13 @@ df.numeric <- df.numeric %>%
 ### Demographic Data
 ```{r summaries}
 # Gender Summary
-df.sibilant %>% 
+df.numeric %>% 
   select(workerid,gender_corr) %>% 
   group_by(gender_corr) %>% 
   reframe("count" = n_distinct(workerid))
 
 # Age Summary
-df.sibilant %>% 
+df.numeric %>% 
   filter(!is.na(age)==T) %>% 
   summarize("min_age" = min(age), 
             "mean_age" = mean(age), 
@@ -184,25 +185,25 @@ df.sibilant %>%
             "sd_age" = sd(age))
 
 # Racial Summary (flor flavor, not part of planned analysis)
-df.sibilant %>% 
+df.numeric %>% 
   select(workerid,race_corr) %>% 
   group_by(race_corr) %>% 
   reframe("count" = n_distinct(workerid))
 
 # Region Summary (for flavor, not part of planned analysis)
-df.sibilant %>% 
+df.numeric %>% 
   select(workerid,region) %>% 
   group_by(region) %>% 
   reframe("count" = n_distinct(workerid))
 
 # Education Summary (for flavor, not part of planned analysis)
-df.sibilant %>% 
+df.numeric %>% 
   select(workerid,edu) %>% 
   group_by(edu) %>% 
   reframe("count" = n_distinct(workerid))
 
 # Political Summary (for flavor, not part of planned analysis) 
-df.sibilant %>% 
+df.numeric %>% 
   select(workerid,political) %>% 
   group_by(political) %>% 
   reframe("count" = n_distinct(workerid))
@@ -419,6 +420,7 @@ fig.bar_sib <- ggplot(data = df.numeric,
   stat_summary(fun.data = "mean_cl_boot",
                geom = "linerange") +
   scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
+      coord_cartesian(ylim = c(0, 0.55)) +
   labs(x = "/s/ Condition",
        y = "Masculinity Rating")
 print(fig.bar_sib)
@@ -526,6 +528,38 @@ ggsave(file="~/masc_perception_2spk/analysis/figures/point_sib_spk.png",width=8,
 fig.by_gender +  theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + fig.point_by_gender + theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 ```
 
+```{r}
+ggplot(data = df.numeric,
+       mapping = aes(x = sib_code,
+                     y = response,
+                     group = spk)) + 
+  geom_point(alpha = 0.025,
+             position = position_jitter(width = 0.1, height = 0)) + 
+  stat_summary(fun.data = "mean_cl_boot",
+               shape = 21,
+               size = 0.5,
+               color = "black",
+               fill = "lightblue") + 
+  facet_grid(race_corr~spk) + 
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
+  labs(x = "/s/ Condition",
+       y = "Masculinity Rating")
+
+ggplot(data = df.numeric,
+       mapping = aes(x = sib_code,
+                     y = response)) + 
+  stat_summary(fun = "mean",
+               geom = "bar",
+               fill = "lightblue") + 
+  stat_summary(fun.data = "mean_cl_boot",
+               geom = "linerange") +
+  facet_grid(race_corr~spk) +
+  scale_x_discrete(limits = c("control", "backed", "mid", "fronted")) + 
+  labs(x = "/s/ Condition",
+       y = "Masculinity Rating")
+```
+
+
 ### SRQ (SAVE AND PRINT THESE)
 ```{r srq}
 ggplot(df.numeric, 
@@ -558,16 +592,16 @@ ggplot(df.numeric, mapping = aes(y = response,
 
 ggplot(df.numeric, mapping = aes(y = response, 
                           x = srq_score)) + 
-  stat_summary(aes(group = sib_code),
+  stat_summary(aes(color = sib_code),
                fun = "mean",
                geom = "pointrange",
                alpha = .25) +
   xlab("Participant SRQ Score") +
   ylab("Mean Masculinity Rating") + 
-  facet_wrap(sib_code~spk) +
+  facet_grid(gender_corr~spk) +
   geom_smooth(method = "lm",
               se = T,
-              color = "red") +
+              aes(color = sib_code)) +
   scale_color_manual(values = cbPalette, name = "Sibilant Condition")
 
 df.numeric$sib_recode <- recode(df.numeric$sib_code, 
@@ -608,18 +642,18 @@ ggplot(df.numeric,
 ggplot(df.numeric, 
        mapping = aes(y = response, 
                      x = srq_score,
-                     group = sib_code)) + 
+                     group = gender_corr)) + 
   stat_summary(fun = "mean",
                geom = "pointrange",
                alpha = .2,
-               aes(color = sib_code)) +
+               aes(color = gender_corr)) +
   xlab("Participant SRQ Score") +
   ylab("Mean Masculinity Rating") + 
-  facet_wrap(spk~gender_corr) +
+  facet_wrap(~spk) +
   geom_smooth(method = "lm",
               se = T,
-              color = "black") +
-  scale_color_manual(values = cbPalette, name = "Sibilant Condition")
+              aes(color = gender_corr)) +
+  scale_color_manual(values = cbPalette, name = "Gender")
 ```
 
 
@@ -1124,15 +1158,19 @@ print(resp_by_f2_v2)
 ### Confirm that Linear Model is Inappropriate for Data 
 ```{r}
 # Linear mixed effects model with random by-participant and by-item intercepts 
-fit.lmer <- lmer(response ~ gender_corr*spk*srq_scoreC +
-                   sib_code +
-                   spk +
+fit.lmer <- lmer(response ~ gender_corr*spk*sib_code +
+                   gender_corr*spk*srq_scoreC +
+                   #sib_code +
+                   #spk +
+                   #spk:sib_code + 
                    prop_creakC + 
                    speech_rateC + 
+                   #s_milliseconddur + 
                    NC_norm_mean_f0C + 
                    NC_norm_range_f0C +
                    sib_code:NC_norm_range_f0C +
-                   # f2_raw*sib_code + # exclude bc using f2 removes control condition
+                   #f2_norm*spk*sib_code +
+                   #f2_raw*sib_code*spk + # exclude bc using f2 removes control condition
                    (1 | workerid) + 
                    (1 | triplet_id), 
                  data = df.numeric,
@@ -1165,22 +1203,18 @@ fit.lmer %>%
 ### ZOIB Model using `brm()`
 ```{r}
 # build ZOIB model
-l.zoib <- bf(response ~ gender_corr*spk*srq_scoreC +
-                   sib_code +
-                   spk +
-                   srq_scoreC + 
-                   gender_corr + 
-                   prop_creakC + 
-                   speech_rateC + 
-                   NC_norm_mean_f0C +
-                   NC_norm_mean_f0C + 
-                   NC_norm_range_f0C +
-                   (1 | workerid) + 
-                   (1 | triplet_id),
-  phi ~ gender_corr*spk, 
-  zoi ~ gender_corr*spk,
-  coi ~ gender_corr*spk,
-  family = zero_one_inflated_beta()
+l.zoib <- bf(response ~ gender_corr*spk*sib_code + 
+               gender_corr*spk*srq_scoreC +
+               prop_creakC + 
+               speech_rateC + 
+               NC_norm_mean_f0C +
+               NC_norm_range_f0C +
+               (1 | workerid) + 
+               (1 | triplet_id),
+             phi ~ gender_corr*spk, 
+             zoi ~ gender_corr*spk,
+             coi ~ gender_corr*spk,
+             family = zero_one_inflated_beta()
 )
 
 # set priors - all weakly informed, default student_t priors for all random eff. (not shown)
@@ -1223,14 +1257,60 @@ priors <- c(
   ## interactions 
   prior(normal(0, 0.5), 
         class = "b", 
+        coef = "spkB:sib_codebacked"), # spkB:backed interaction
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "spkB:sib_codemid"), # spkB:mid interaction
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "spkB:sib_codefronted"), # spkB:fronted interaction
+  ##
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrmale:sib_codebacked"), # gender_corr:sib_codebacked interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrmale:sib_codemid"), # gender_corr:sib_codemid interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrmale:sib_codefronted"), # gender_corr:sib_codefronted interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
         coef = "gender_corrmale:spkB"), # gender_corr:spk interaction term
   prior(normal(0, 0.5), 
         class = "b", 
         coef = "gender_corrmale:spkB:srq_scoreC"), # gender_corr:spk:srq interaction term
   prior(normal(0, 0.5), 
         class = "b", 
+        coef = "gender_corrmale:spkB:sib_codebacked"), # gender_corr:spkB:sib_codebacked interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrmale:spkB:sib_codemid"), # gender_corr:spkB:sib_codemid interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrmale:spkB:sib_codefronted"), # gender_corr:spkB:sib_codefronted interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
         coef = "gender_corrmale:srq_scoreC"), # gender_corr:srq interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrmale:sib_codebacked:srq_scoreC"), # gender_corr:srq:sib_codebacked interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrmale:sib_codemid:srq_scoreC"), # gender_corr:srq:sib_codemid interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrmale:sib_codefronted:srq_scoreC"), # gender_corr:srq:sib_codefronted interaction term
   ##
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrnc:sib_codebacked"), # gender_corr:sib_codebacked interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrnc:sib_codemid"), # gender_corr:sib_codemid interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrnc:sib_codefronted"), # gender_corr:sib_codefronted interaction term
   prior(normal(0, 0.5), 
         class = "b", 
         coef = "gender_corrnc:spkB"), # gender_corr:spk interaction term
@@ -1239,10 +1319,38 @@ priors <- c(
         coef = "gender_corrnc:spkB:srq_scoreC"), # gender_corr:spk:srq interaction term
   prior(normal(0, 0.5), 
         class = "b", 
+        coef = "gender_corrnc:spkB:sib_codebacked"), # gender_corr:spkB:sib_codebacked interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrnc:spkB:sib_codemid"), # gender_corr:spkB:sib_codemid interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
+        coef = "gender_corrnc:spkB:sib_codefronted"), # gender_corr:spkB:sib_codefronted interaction term
+  prior(normal(0, 0.5), 
+        class = "b", 
         coef = "gender_corrnc:srq_scoreC"), # gender_corr:srq interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrnc:sib_codebacked:srq_scoreC"), # gender_corr:srq:sib_codebacked interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrnc:sib_codemid:srq_scoreC"), # gender_corr:srq:sib_codemid interaction term
+  #prior(normal(0, 0.5), 
+  #      class = "b", 
+  #      coef = "gender_corrnc:sib_codefronted:srq_scoreC"), # gender_corr:srq:sib_codefronted interaction term
+  ##
   prior(normal(0, 0.5),
         class = "b",
         coef = "spkB:srq_scoreC"),
+  #prior(normal(0, 0.5),
+  #      class = "b",
+  #      coef = "sib_codebacked:srq_scoreC"),
+  #prior(normal(0, 0.5),
+  #      class = "b",
+  #      coef = "sib_codemid:srq_scoreC"),
+  #prior(normal(0, 0.5),
+  #      class = "b",
+  #      coef = "sib_codefronted:srq_scoreC"),
   
   # priors for random effects 
   prior(student_t(3, 0, 1), 
@@ -1327,18 +1435,19 @@ priors <- c(
 )
 
 # prior predictive checks (do this before fitting model)
-fit.zoib_prior <- brm(
+fit.zoib_prior_2 <- brm(
   formula = l.zoib,
   data = df.numeric,         
   prior = priors,
   sample_prior = "only",     
   iter = 8000,
   warmup = 2000,
-  cores = 10,
+  cores = 6,
   chains = 8,
   seed = 327,
-  control = list(adapt_delta = 0.99),
-  file = "brm_zoib_prior")
+  control = list(adapt_delta = 0.99,
+                 max_treedepth = 15),
+  file = "brm_zoib_prior_all")
 ```
 
 ```{r}
@@ -1349,18 +1458,19 @@ fit.zoib <- brm(
   prior = priors,
   iter = 8000,
   warmup = 2000,
-  cores = 4,
+  cores = 2,
   chains = 8,
-  file = "brm_zoib_newes",
-  init_r = 0.1,
-  control = list(adapt_delta = 0.99),
+  file = "brm_zoib_large",
+  init_r = 0.1, 
+  control = list(adapt_delta = 0.99,
+                 max_treedepth = 15),
   seed = 327,
 )
 
 # LOAD fit zoib model 
-#fit.zoib <- readRDS("~/masc_perception_2spk/brm_zoib_3rd.rds")
+fit.zoib2 <- readRDS("~/masc_perception_2spk/brm_zoib_comp.rds")
 
-summary(fit.zoib)
+summary(fit.zoib2)
 ```
 
 
@@ -1447,6 +1557,126 @@ kable(df.test1)
 
 #### /s/ Condition Differences
 ```{r}
+fit.zoib %>% 
+  emmeans(specs = pairwise ~ sib_code | spk) %>% 
+  pluck("contrasts") %>% 
+  gather_emmeans_draws() %>% 
+  ggplot(aes(x = .value,
+             y = spk,
+             fill = after_stat(x > 0))) + 
+  facet_wrap(~ contrast) +
+  stat_halfeye(point_interval = mean_hdi,
+               .width = c(0.5, 0.75, 0.95),
+               show.legend = T) + 
+  geom_vline(xintercept = 0, 
+             linetype = 2) + 
+  scale_fill_manual(values = c("gray80", "skyblue")) + 
+  scale_x_continuous(limits = c(-0.15, 0.25)) +
+  labs(title = "Pairwise comparisons of /s/ condition by speaker (multi token)",
+       y = "speaker")
+ggsave(file="~/masc_perception_2spk/analysis/figures/emmeans.pdf", width=8,height=4)
+ggsave(file="~/masc_perception_2spk/analysis/figures/emmeans.png", width=8,height=4)
+```
+
+```{r}
+sib.h1 <- hypothesis(fit.zoib, "Intercept > Intercept + sib_codefronted") 
+sib.h2 <- hypothesis(fit.zoib, "Intercept + sib_codemid > Intercept + sib_codefronted")
+sib.h3 <- hypothesis(fit.zoib, "Intercept + sib_codebacked > Intercept + sib_codefronted")
+
+df.sib.test <- rbind(data.frame(Hypothesis = "Control > Fronted /s/", 
+                                sib.h1$hypothesis),
+                     data.frame(Hypothesis = "Mid /s/ > Fronted /s/", 
+                                sib.h2$hypothesis),
+                     data.frame(Hypothesis = "Backed /s/ > Fronted /s/", 
+                                sib.h3$hypothesis)) %>% 
+  select(-Hypothesis.1)
+
+kable(df.sib.test)
+```
+
+##### Use if spk:sib_code interaction is in model
+```{r}
+sibA.h1 <- hypothesis(fit.zoib, "Intercept > Intercept + sib_codefronted") 
+sibA.h2 <- hypothesis(fit.zoib, "Intercept + sib_codemid > Intercept + sib_codefronted")
+sibA.h3 <- hypothesis(fit.zoib, "Intercept + sib_codebacked > Intercept + sib_codefronted")
+sibB.h1 <- hypothesis(fit.zoib, "Intercept + spkB > Intercept + spkB + sib_codefronted + spkB:sib_codefronted") 
+sibB.h2 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codemid + spkB:sib_codemid > Intercept + spkB + sib_codefronted + spkB:sib_codefronted")
+sibB.h3 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codebacked + spkB:sib_codebacked > Intercept + spkB + sib_codefronted + spkB:sib_codefronted")
+
+df.sib.test.mult <- rbind(data.frame(Hypothesis = "Spk A: Control > Fronted /s/", 
+                                sibA.h1$hypothesis),
+                     data.frame(Hypothesis = "Spk A: Mid /s/ > Fronted /s/", 
+                                sibA.h2$hypothesis),
+                     data.frame(Hypothesis = "Spk A: Backed /s/ > Fronted /s/", 
+                                sibA.h3$hypothesis),
+                     data.frame(Hypothesis = "Spk B: Control > Fronted /s/", 
+                                sibB.h1$hypothesis),
+                     data.frame(Hypothesis = "Spk B: Mid /s/ > Fronted /s/", 
+                                sibB.h2$hypothesis),
+                     data.frame(Hypothesis = "Spk B: Backed /s/ > Fronted /s/", 
+                                sibB.h3$hypothesis)) %>% 
+  select(-Hypothesis.1)
+
+kable(df.sib.test.mult)
+```
+
+#### Gender Stuff
+```{r}
+# sib test by gender 
+## SpkA
+f.sib.h1 <- hypothesis(fit.zoib, "Intercept > Intercept + sib_codefronted") 
+f.sib.h2 <- hypothesis(fit.zoib, "Intercept + sib_codemid > Intercept + sib_codefronted")
+f.sib.h3 <- hypothesis(fit.zoib, "Intercept + sib_codebacked > Intercept + sib_codefronted")
+m.sib.h1 <- hypothesis(fit.zoib, "Intercept + gender_corrmale > Intercept + gender_corrmale + sib_codefronted + gender_corrmale:sib_codefronted") 
+m.sib.h2 <- hypothesis(fit.zoib, "Intercept + gender_corrmale + sib_codemid + gender_corrmale:sib_codemid > Intercept + gender_corrmale + sib_codefronted + gender_corrmale:sib_codefronted")
+m.sib.h3 <- hypothesis(fit.zoib, "Intercept + gender_corrmale + sib_codebacked + gender_corrmale:sib_codebacked > Intercept + gender_corrmale + sib_codefronted + gender_corrmale:sib_codefronted")
+nc.sib.h1 <- hypothesis(fit.zoib, "Intercept + gender_corrnc > Intercept + gender_corrnc + sib_codefronted + gender_corrnc:sib_codefronted") 
+nc.sib.h2 <- hypothesis(fit.zoib, "Intercept + gender_corrnc + sib_codemid + gender_corrnc:sib_codemid > Intercept + gender_corrnc + sib_codefronted + gender_corrnc:sib_codefronted")
+nc.sib.h3 <- hypothesis(fit.zoib, "Intercept + gender_corrnc + sib_codebacked + gender_corrnc:sib_codebacked > Intercept + gender_corrnc + sib_codefronted + gender_corrnc:sib_codefronted")
+
+## SpkB
+f.sib.h1 <- hypothesis(fit.zoib, "Intercept + spkB > Intercept + spkB + sib_codefronted + spkB:sib_codefronted") 
+f.sib.h2 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codemid + spkB:sib_codemid > Intercept + spkB + sib_codefronted + spkB:sib_codefronted")
+f.sib.h3 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codebacked + spkB:sib_codebacked > Intercept + spkB + sib_codefronted + spkB:sib_codefronted")
+
+m.sib.h1 <- hypothesis(fit.zoib, "Intercept + spkB + gender_corrmale + gender_corrmale:spkB > Intercept + spkB + sib_codefronted + gender_corrmale + spkB:sib_codefronted + gender_corrmale:spkB + gender_corrmale:sib_codefronted +  gender_corrmale:spkB:sib_codefronted") 
+
+m.sib.h2 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codemid + gender_corrmale + gender_corrmale:spkB + gender_corrmale:sib_codemid + gender_corrmale:sib_codemid + gender_corrmale:spkB:sib_codemid > Intercept + spkB + sib_codefronted + gender_corrmale + spkB:sib_codefronted + gender_corrmale:spkB + gender_corrmale:sib_codefronted +  gender_corrmale:spkB:sib_codefronted")
+
+m.sib.h3 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codebacked + gender_corrmale + gender_corrmale:spkB + gender_corrmale:sib_codebacked + gender_corrmale:sib_codebacked + gender_corrmale:spkB:sib_codebacked > Intercept + spkB + sib_codefronted + gender_corrmale + spkB:sib_codefronted + gender_corrmale:spkB + gender_corrmale:sib_codefronted +  gender_corrmale:spkB:sib_codefronted")
+
+nc.sib.h1 <- hypothesis(fit.zoib, "Intercept + spkB + gender_corrnc + gender_corrnc:spkB > Intercept + spkB + sib_codefronted + gender_corrnc + spkB:sib_codefronted + gender_corrnc:spkB + gender_corrnc:sib_codefronted +  gender_corrnc:spkB:sib_codefronted") 
+nc.sib.h2 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codemid + gender_corrnc + gender_corrnc:spkB + gender_corrnc:sib_codemid + gender_corrnc:sib_codemid + gender_corrnc:spkB:sib_codemid > Intercept + spkB + sib_codefronted + gender_corrnc + spkB:sib_codefronted + gender_corrnc:spkB + gender_corrnc:sib_codefronted +  gender_corrnc:spkB:sib_codefronted")
+nc.sib.h3 <- hypothesis(fit.zoib, "Intercept + spkB + sib_codebacked + gender_corrnc + gender_corrnc:spkB + gender_corrnc:sib_codebacked + gender_corrnc:sib_codebacked + gender_corrnc:spkB:sib_codebacked > Intercept + spkB + sib_codefronted + gender_corrnc + spkB:sib_codefronted + gender_corrnc:spkB + gender_corrnc:sib_codefronted +  gender_corrnc:spkB:sib_codefronted")
+
+df.gen.sib.test <- rbind(data.frame(Hypothesis = "Fem: Control > Fronted /s/", 
+                                f.sib.h1$hypothesis),
+                     data.frame(Hypothesis = "Fem: Mid /s/ > Fronted /s/", 
+                                f.sib.h2$hypothesis),
+                     data.frame(Hypothesis = "Fem: Backed /s/ > Fronted /s/", 
+                                f.sib.h3$hypothesis),
+                     data.frame(Hypothesis = "Masc: Control > Fronted /s/", 
+                                m.sib.h1$hypothesis),
+                     data.frame(Hypothesis = "Masc: Mid /s/ > Fronted /s/", 
+                                m.sib.h2$hypothesis),
+                     data.frame(Hypothesis = "Masc: Backed /s/ > Fronted /s/", 
+                                m.sib.h3$hypothesis),
+                     data.frame(Hypothesis = "NC: Control > Fronted /s/", 
+                                nc.sib.h1$hypothesis),
+                     data.frame(Hypothesis = "NC: Mid /s/ > Fronted /s/", 
+                                nc.sib.h2$hypothesis),
+                     data.frame(Hypothesis = "NC: Backed /s/ > Fronted /s/", 
+                                nc.sib.h3$hypothesis)) %>% 
+  select(-Hypothesis.1)
+
+kable(df.gen.sib.test)
+
+# gender dif in sib dif
+```
+
+
+#### Phonetic Effects 
+```{r}
 phon.h1 <- hypothesis(fit.zoib, "prop_creakC > 0") 
 phon.h2 <- hypothesis(fit.zoib, "NC_norm_mean_f0C < 0") 
 phon.h3 <- hypothesis(fit.zoib, "NC_norm_range_f0C < 0") 
@@ -1466,71 +1696,160 @@ kable(df.phon.test)
 ```
 
 
+#### Listener Effects
 ```{r}
 fit.zoib %>% 
-  emmeans(specs = pairwise ~ sib_code | spk) %>% 
+  emmeans(specs = pairwise ~ spk | gender_corr) %>% 
   pluck("contrasts") %>% 
   gather_emmeans_draws() %>% 
   ggplot(aes(x = .value,
-             y = spk,
+             y = gender_corr,
              fill = after_stat(x > 0))) + 
-  facet_wrap(~ contrast) +
   stat_halfeye(point_interval = mean_hdi,
                .width = c(0.5, 0.75, 0.95),
                show.legend = T) + 
   geom_vline(xintercept = 0, 
              linetype = 2) + 
   scale_fill_manual(values = c("gray80", "skyblue")) + 
-  labs(title = "Pairwise comparisons of /s/ condition by speaker",
-       y = "speaker")
-ggsave(file="~/masc_perception_2spk/analysis/figures/emmeans.pdf", width=8,height=4)
+  labs(title = "Difference in average speaker ratings by listener gender",
+       y = "Gender")
+ggsave(file="~/masc_perception_2spk/analysis/figures/emmeans_gender_corr.pdf", width=8,height=4)
 ```
 
-
-#### Phonetic Effects 
+##### Means
 ```{r}
-phon.h1 <- hypothesis(fit.zoib, "prop_creakC > 0") 
-phon.h1 <- hypothesis(fit.zoib, "prop_creakC > 0") 
+# relative to control condition
+gender.h1 <- hypothesis(fit.zoib, "spkB > spkB + gender_corrmale:spkB") 
+gender.h2 <- hypothesis(fit.zoib, "spkB > spkB + gender_corrnc:spkB") 
+gender.h3 <- hypothesis(fit.zoib, "spkB + gender_corrmale:spkB > spkB + gender_corrnc:spkB") 
 
-df.phon.test1 <- rbind(data.frame(Hypothesis = "Creak Effect?", 
-                                  phon.h1$hypothesis)) %>% 
+df.gender.test <- rbind(data.frame(Hypothesis = "Female Dif > Male Dif?", 
+                                  gender.h1$hypothesis),
+                       data.frame(Hypothesis = "Female Dif > NC Dif?",
+                                  gender.h2$hypothesis),
+                       data.frame(Hypothesis = "Male Dif > NC Dif?",
+                                  gender.h3$hypothesis)) %>% 
   select(-Hypothesis.1)
 
-kable(df.phon.test1)
+kable(df.gender.test)
+```
+
+##### Interaction with SRQ
+```{r}
+
 ```
 
 
-## CUT Full ling model 
-
-
-```{r pairwise_full}
-emmeans(model_planned_sub, pairwise ~ sib_code | spk, lmerTest.limit = 29499)
-emmeans(model_planned_sub, pairwise ~ sib_code, lmerTest.limit = 29499)
-emmeans(model_planned_sub, pairwise ~ spk, lmerTest.limit = 29499)
+#### Extra Thingy - incorporate in brms model if time
+```{r}
+fit.lmer %>% 
+  #emmeans(specs = pairwise ~ sib_code*vowel*spk, lmerTest.limit = 29499) %>% 
+  emtrends( ~ vowel*spk, var = "sib_code") 
+  pluck("contrasts") %>% 
+  summary() %>%
+  ggplot(aes(x = estimate,
+             y = vowel)) +
+  geom_errorbar(aes(xmin=estimate - (SE * qt((1-0.05)/2 + .5, df)), 
+                    xmax=estimate + (SE * qt((1-0.05)/2 + .5, df)),
+                    width = .3)) + 
+  geom_point(shape = 21,
+             color = "black",
+             fill = "lightblue") + 
+  geom_vline(xintercept = 0, 
+             linetype = 2) + 
+  facet_wrap(~ contrast)
+```
+```{r}
+emmeans(fit.lmer, pairwise ~ sib_code | vowel_class * spk) %>%
+  pluck("contrasts") %>%
+  as.data.frame() %>% 
+  ggplot(aes(x = estimate,
+             y = vowel_class, 
+             group = spk)) + 
+  geom_errorbar(aes(xmin=estimate - (SE * qt((1-0.05)/2 + .5, df)), 
+                    xmax=estimate + (SE * qt((1-0.05)/2 + .5, df)),
+                    width = .3)) + 
+  geom_point(shape = 21,
+             color = "black",
+             fill = "lightblue") + 
+  geom_vline(xintercept = 0, 
+             linetype = 2) + 
+  facet_grid(spk ~ contrast)
 ```
 
-### Simple Model
-```{r model_simple}
-## simple model, no control
-model_simple_sub <- lmer(response_numeric ~ sib_code*spk + 
-                           gender*spk + ageC*spk + srq_scoreC*spk +
-                           (1|workerid) + (1|triplet_id), data = subset, REML = F)
-summary(model_simple_sub)
-
-r.squaredGLMM(model_simple_sub)
-
-## simple model with control 
-model_simple <- lmer(response_numeric ~ sib_code*spk + 
-                           gender*spk + ageC*spk + srq_scoreC*spk +
-                           (1 + sib_code || workerid) + (1|triplet_id), data = exp_data, REML = F)
-summary(model_simple)
-
-r.squaredGLMM(model_simple)
-
+```{r}
+ggplot(df.numeric,
+       aes(x = f2_raw,
+           y = response,
+           color = sib_code)) + 
+  #geom_point() + 
+  geom_smooth(method = "lm") + 
+  facet_wrap(~ spk) + 
+  labs(title = "multi token")
 ```
 
-```{r pairwise_simple}
-emmeans(model_simple_sub, pairwise ~ sib_code | spk, lmerTest.limit = 29499)
-emmeans(model_simple, pairwise ~ sib_code, lmerTest.limit = 29499)
-emmeans(model_simple, pairwise ~ spk, lmerTest.limit = 29499)
+```{r}
+df.numeric %>% 
+  filter(sib_code != "control") %>%
+  ggplot(aes(x = f2_norm,
+             color = cog,
+             shape = sib_code,
+             y = response)) + 
+  geom_smooth(method = "lm",
+              color = "black",
+              alpha = 0.25) +
+  stat_summary(fun = "mean",
+               geom = "point",
+               alpha = 0.75) + 
+  scale_color_gradient2(mid = "red",
+                       low = "blue",
+                       high = "yellow",
+                       limits = c(4000, 9500),
+                       midpoint = 7000) +
+  coord_cartesian(ylim = c(0, 1)) + 
+  scale_x_continuous(trans = "reverse") + 
+  #facet_wrap(~spk)
+  facet_grid(spk~sib_code)
+
+df.numeric %>% 
+  filter(sib_code != "control") %>%
+  group_by(spk, sib_code, f2_raw) %>%
+  summarise(
+    cog = mean(cog, na.rm = T),
+    response = mean(response, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = f2_raw,
+             y = cog,
+             shape = sib_code,
+             color = response)) + 
+  geom_point(alpha = 0.75) + 
+  geom_smooth(method = "lm") +
+  scale_color_gradient2(mid = "red",
+                       low = "blue",
+                       high = "yellow",
+                       limits = c(0, 1),
+                       midpoint = 0.5) +
+  coord_cartesian(ylim = c(4000, 9500)) + 
+  scale_x_continuous(trans = "reverse") + 
+  #facet_wrap(~spk)
+  facet_grid(spk~sib_code)
 ```
+
+```{r}
+df.numeric %>% 
+  filter(sib_code != "control") %>%
+  ggplot(mapping = aes(x = sib_code,
+                     y = response)) + 
+  stat_summary(fun = "mean",
+               geom = "bar",
+               fill = "lightblue") + 
+  stat_summary(fun.data = "mean_cl_boot",
+               geom = "linerange") +
+  facet_grid(vowel_class~spk) +
+  scale_x_discrete(limits = c("backed", "mid", "fronted")) + 
+  labs(x = "/s/ Condition",
+       y = "Masculinity Rating", 
+       title = "Multi token: masc rating by /s/ + vowel class")
+```
+
